@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Mark</title>
+    <style>
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            display: inline-flex;
+            flex-direction: column;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .logo span {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.85rem;
+            font-weight: normal;
+            opacity: 0.7;
+        }
+
+        .logo p {
+            font-size: 1.25rem;
+            margin: 0;
+            line-height: 1.2;
+
+        }
+
+        .logo a {
+            text-decoration: none;
+            color: rgb(47, 47, 47);
+        }
+
+        .logo .subtitle {
+            font-size: 1rem;
+            font-weight: normal;
+            opacity: 0.7;
+        }
+
+        span.p {
+            font-family: 'Courier New', Courier, monospace;
+
+        }
+
+        #main_nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+            margin: 0;
+            padding: 0;
+            align-content: center;
+        }
+
+        #main_nav a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        body {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        footer {
+            border-top: 1px solid #ddd;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            font-size: 0.9rem;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+
+            <a href="index.html">
+                <p>
+                    MARK PAUL
+                    <br><span class="subtitle">Portifolio</span>
+                </p>
+            </a>
+        </div>
+
+        <nav id="main_nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="data.html">Data</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <main>
+        <hr>
+        <section aria-labelledby="contact-heading">
+            <h2 id="contact-heading">Send a Message</h2>
+            <br>
+            You can reach me directly at
+            <a href="mailto:markpaulmu@gmail.com">markpaulmu@gmail.com</a>
+            or use the form below.
+            <br><br>
+
+            <!-- action="#" is a placeholder. In a real deployment it points at a server endpoint or a service like Formspree. -->
+            <form action="#" method="post">
+
+                <!-- fieldset groups related controls. legend names the group for screen readers. -->
+                <fieldset>
+                    <legend>Your Details</legend>
+                    <!-- Every input with label must also match the input's id. -->
+                    <label for="name">Full Name :</label>
+                    <input type="text" id="name" name="name" autocomplete="name" minlength="2" required>
+                    <br><br>
+
+                    <label for="email">Email Address :</label>
+                    <!-- using type="email" gives native validation -->
+                    <input type="email" id="email" name="email" autocomplete="email" required>
+                    <br><br>
+                    <label for="phone">Phone Number : </label>
+                    <input type="tel" id="phone" name="phone" autocomplete="tel" pattern="[0-9+()\s-]{7,15}"
+                        placeholder="+256 700 000 000">
+
+                </fieldset>
+
+                <fieldset>
+                    <legend>Your Message</legend>
+                    <label for="subject">Subject</label>
+                    <select id="subject" name="subject" required>
+                        <option value="">Please choose a topic</option>
+                        <option value="collaboration">Project collaboration</option>
+                        <option value="internship">Internship opportunity</option>
+                        <option value="community">Community Invitation</option>
+                        <option value="Greetings">Saying Hi</option>
+                        <option value="other">Other</option>
+                    </select><br><br>
+                    <label for="message">Message</label>
+                    <!-- textarea is for the long form text. -->
+                    <textarea id="message" name="message" rows="10" cols="50" required></textarea>
+
+                </fieldset>
+                <br>
+                <button type="submit">Send Message</button>
+
+            </form>
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>&copy; 2026 MARK PAUL.</p>
+    </footer>
+</body>
+
+</html>
