@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Gallery</title>
+    <style>
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            display: inline-flex;
+            flex-direction: column;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .logo span {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.85rem;
+            font-weight: normal;
+            opacity: 0.7;
+        }
+
+        .logo p {
+            font-size: 1.25rem;
+            margin: 0;
+            line-height: 1.2;
+
+        }
+
+        .logo a {
+            text-decoration: none;
+            color: rgb(47, 47, 47);
+        }
+
+        .logo .subtitle {
+            font-size: 1rem;
+            font-weight: normal;
+            opacity: 0.7;
+        }
+
+        span.p {
+            font-family: 'Courier New', Courier, monospace;
+
+        }
+
+        #main_nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+            margin: 0;
+            padding: 0;
+            align-content: center;
+        }
+
+        #main_nav a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        body {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .shorts {
+            max-width: 300px;
+            aspect-ratio: 9 / 16;
+            margin: 0 auto;
+        }
+
+        .shorts iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+
+
+        footer {
+            border-top: 1px solid #ddd;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        figure {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        figure img {
+            flex-shrink: 0;
+        }
+
+        figcaption {
+            flex: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+
+            <a href="index.html">
+                <p>
+                    MARK PAUL
+                    <br><span class="subtitle">Portifolio</span>
+                </p>
+            </a>
+        </div>
+
+        <nav id="main_nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="data.html">Data</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <main>
+        <hr>
+        <section aria-labelledby="gallery-heading">
+            <h2 id="gallery-heading">Selected Work</h2>
+
+            <!-- Each figure is self-contained: image plus caption. alt text describes the image's purpose, not the file name. -->
+
+            <figure>
+                <img src="media/images/xfce4_Debian_proot.png" width="800"
+                    alt="Screenshot of Termux X11 running a Debian Linux with xfc4 DE for GUI on Android with a floating green keyboard button-toggle visible on right hand side of the screen.">
+                <figcaption>
+                    <strong>Termux X11 Floating Keyboard Button</strong> : An extar feature
+                    for adding an on-demand soft keyboard by just tapping Termux X11 app on Android.
+                    Built with C, Android NDK, X11, and Termux.
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img width="300" src="media/images/Timetable_screen.png"
+                    alt="Screenshot of the Lectures Android app showing a seven-day timetable with lecture blocks and a vacant room finder panel.">
+                <figcaption>
+                    <strong>Lectures App</strong> : Android timetable app with a
+                    write-through offline cache , find free room and queued sync. Currently shipping as a ntive android
+                    academic companion
+                    for a MUST student(was a personal app) built with Kotlin, Jetpack Compose M3.
+                </figcaption>
+            </figure>
+            <figure>
+                <img width="300" src="media/images/faculty_picker_lectures_app.png"
+                    alt="Screenshot of the Lectures Android app showing the Faculty picker.">
+                <figcaption>
+                    <strong>In the Lectures App</strong>, one will first choose their Faculty using the Faculty picker.
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="media/images/HampKeyboardSettings.png" width="300"
+                    alt="Screenshot of the Hamp Keyboard App setings screen">
+                <figcaption>
+                    <strong>Hamp Keyboard</strong> is a fork of the FUTO Keyboard (itself a fork of LatinIME, The
+                    Android Open-Source Keyboard), and installable alongside the official FUTO Keyboard
+                    app. What is special with Hamp Keyboard is that it adds features of
+                    Swipe left/right on the spacebar moving the cursor character-by-character and, swipe up/down on the
+                    spacebar moving the cursor line-by-line.
+                </figcaption>
+            </figure>
+        </section>
+
+        <section>
+            <h2>Quick Demo showing some screens in Lectures app</h2>
+            <!-- controls is required for playback control and poster shows up before video playback. -->
+            <iframe width="300" height="533" src="https://www.youtube.com/embed/O3fT4BBkRUM"
+                title="YouTube Shorts player" frameborder="0" allow="accelerometer; autoplay; clipboard-write"
+                allowfullscreen>
+            </iframe>
+        </section>
+
+
+
+        <footer>
+            <p>&copy; 2026 MARK PAUL.</p>
+        </footer>
+
+
+
+</body>
+
+</html>
