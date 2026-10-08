@@ -4,7 +4,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Mark Paul Mugendawala &mdash; Software Engineering Portfolio</title>
+
+    <!-- ---- search engine + link preview tags ----
+         description is the grey text google shows under the title in results.
+         keep it around 150 characters or it gets chopped off mid-sentence. -->
+    <meta name="description" content="Portfolio of Mark Paul Mugendawala, a Software Engineering student at Mbarara University of Science and Technology building offline-first Android apps.">
+    <meta name="author" content="Mark Paul Mugendawala">
+
+    <!-- google has ignored the keywords tag for years because people abused it.
+         it's here so you can see the idea, not because it does anything. -->
+    <meta name="keywords" content="Mark Paul Mugendawala, software engineering, portfolio, Android, Kotlin, MUST, Mbarara">
+
+    <!-- index, follow is what search engines do by default anyway. writing it out
+         just makes the intention explicit instead of leaving it implied. -->
+    <meta name="robots" content="index, follow">
+
+    <!-- canonical says which URL is the "real" one. it matters once a page is
+         reachable at more than one address, so engines don't split the ranking. -->
+    <link rel="canonical" href="https://mugmarp.github.io/Professional-Portfolio-HTML5-Group-B/">
+
+    <!-- the og: tags are what facebook, linkedin and whatsapp show when someone
+         pastes the link in. with none of these you get a bare grey box. -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Mark Paul Mugendawala">
+    <meta property="og:title" content="Mark Paul Mugendawala — Software Engineering Portfolio">
+    <meta property="og:description" content="Portfolio of Mark Paul Mugendawala, a Software Engineering student at Mbarara University of Science and Technology building offline-first Android apps.">
+    <meta property="og:url" content="https://mugmarp.github.io/Professional-Portfolio-HTML5-Group-B/">
+    <meta property="og:image" content="https://mugmarp.github.io/Professional-Portfolio-HTML5-Group-B/media/images/social-preview.png">
+    <meta property="og:image:alt" content="Mark Paul Mugendawala portfolio card with the site navigation">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="en_GB">
+
+    <!-- twitter has its own set of names for the same thing. summary_large_image
+         makes the preview a big picture instead of a tiny square thumbnail. -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mark Paul Mugendawala — Software Engineering Portfolio">
+    <meta name="twitter:description" content="Portfolio of Mark Paul Mugendawala, a Software Engineering student at Mbarara University of Science and Technology building offline-first Android apps.">
+    <meta name="twitter:image" content="https://mugmarp.github.io/Professional-Portfolio-HTML5-Group-B/media/images/social-preview.png">
+    <meta name="twitter:image:alt" content="Mark Paul Mugendawala portfolio card with the site navigation">
+
+    <!-- tints the browser bar on mobile chrome/android to match the header -->
+    <meta name="theme-color" content="#f6f8fa">
+
+    <!-- structured data. this is the same info written in a format search engines
+         can read directly instead of guessing from the page text. google uses it
+         for the little info panel it shows next to a person or business result. -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Mark Paul Mugendawala",
+      "url": "https://mugmarp.github.io/Professional-Portfolio-HTML5-Group-B/",
+      "jobTitle": "Software Engineering Student",
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Mbarara University of Science and Technology"
+      },
+      "knowsAbout": ["Android Development", "Kotlin", "Jetpack Compose", "Linux", "C", "C++", "Python", "TypeScript"],
+      "sameAs": ["https://github.com/mugmarp"]
+    }
+    </script>
     <style>
         header {
             display: flex;
