@@ -70,7 +70,8 @@
             padding: 0 2rem;
         }
 
-        main text-primary {
+        .text-primary {
+            display: block;
             font-family: 'Courier New', Courier, monospace;
             font-size: 50px;
         }
@@ -86,17 +87,21 @@
 </head>
 
 <body>
+    <!-- header + nav get copied onto all five pages, so the top bar is byte-for-byte the
+         same everywhere. less to break that way. -->
     <header>
         <div class="logo">
 
             <a href="index.html">
                 <p>
                     MARK PAUL
-                    <br><span class="subtitle">Portifolio</span>
+                    <br><span class="subtitle">Portfolio</span>
                 </p>
             </a>
         </div>
 
+        <!-- a real <nav> element, not a div full of links. screen reader users get a
+             "navigation" landmark out of it and can skip the menu entirely. -->
         <nav id="main_nav">
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -113,6 +118,8 @@
         <hr>
         <h1>Welcome to my page</h1>
 
+        <!-- article, because this intro is the actual story of the page. it still makes
+             sense on its own if you lift it out and drop it somewhere else. -->
         <article>
 
             <h2>Identity</h2>
@@ -133,16 +140,17 @@
                 on demand by just tapping the floating button when
                 running Linux GUI apps on Android.
             </p>
-            <p>I am passionate about building modular applications and exploring AI-assisted developer tools.</p>
             <p>
                 I am active in the Mbarara developer community through GDG Mbarara, MUCOSA, AWS Mbarara, BWAT
                 workshops, and Canva meetups.
             </p>
         </article>
 
+        <!-- aside for the side notes. related to the article, but you don't need them
+             to get the point of the page. -->
         <aside>
             <h2>Quick Facts</h2>
-            <p>Live in Kampala. Interested in getting deep back-end development and .</p>
+            <p>Live in Kampala. Interested in getting into deep back-end development.</p>
         </aside>
 
 
@@ -150,6 +158,7 @@
 
     </main>
 
+    <!-- one footer for the whole page, not one per section -->
     <footer>
         <p>&copy; 2026 MARK PAUL.</p>
     </footer>

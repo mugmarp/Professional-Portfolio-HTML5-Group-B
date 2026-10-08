@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery</title>
     <style>
         header {
@@ -68,20 +70,6 @@
             padding: 0 2rem;
         }
 
-        .shorts {
-            max-width: 300px;
-            aspect-ratio: 9 / 16;
-            margin: 0 auto;
-        }
-
-        .shorts iframe {
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
-
-
         footer {
             border-top: 1px solid #ddd;
             margin-top: 2rem;
@@ -114,7 +102,7 @@
             <a href="index.html">
                 <p>
                     MARK PAUL
-                    <br><span class="subtitle">Portifolio</span>
+                    <br><span class="subtitle">Portfolio</span>
                 </p>
             </a>
         </div>
@@ -133,16 +121,20 @@
 
     <main>
         <hr>
+        <!-- aria-labelledby points at the h2 below so this section gets announced by name
+             instead of just "region". -->
         <section aria-labelledby="gallery-heading">
             <h2 id="gallery-heading">Selected Work</h2>
 
-            <!-- Each figure is self-contained: image plus caption. alt text describes the image's purpose, not the file name. -->
+            <!-- figure instead of a bare <img>, because the caption belongs to the image and
+                 should travel with it. the alt text says what's actually in the shot - if it just
+                 said "screenshot" it would tell someone who can't see it absolutely nothing. -->
 
             <figure>
                 <img src="media/images/xfce4_Debian_proot.png" width="800"
-                    alt="Screenshot of Termux X11 running a Debian Linux with xfc4 DE for GUI on Android with a floating green keyboard button-toggle visible on right hand side of the screen.">
+                    alt="Screenshot of Termux X11 running Debian Linux with the XFCE4 desktop environment as a GUI on Android, with the floating green keyboard button-toggle visible on the right hand side of the screen.">
                 <figcaption>
-                    <strong>Termux X11 Floating Keyboard Button</strong> : An extar feature
+                    <strong>Termux X11 Floating Keyboard Button</strong> &mdash; an extra feature
                     for adding an on-demand soft keyboard by just tapping Termux X11 app on Android.
                     Built with C, Android NDK, X11, and Termux.
                 </figcaption>
@@ -153,9 +145,9 @@
                     alt="Screenshot of the Lectures Android app showing a seven-day timetable with lecture blocks and a vacant room finder panel.">
                 <figcaption>
                     <strong>Lectures App</strong> : Android timetable app with a
-                    write-through offline cache , find free room and queued sync. Currently shipping as a ntive android
-                    academic companion
-                    for a MUST student(was a personal app) built with Kotlin, Jetpack Compose M3.
+                    write-through offline cache, find free room and queued sync. Currently shipping as a native Android
+                    academic companion for a MUST student (it started out as a personal app),
+                    built with Kotlin and Jetpack Compose M3.
                 </figcaption>
             </figure>
             <figure>
@@ -167,33 +159,34 @@
             </figure>
             <figure>
                 <img src="media/images/HampKeyboardSettings.png" width="300"
-                    alt="Screenshot of the Hamp Keyboard App setings screen">
+                    alt="Screenshot of the Hamp Keyboard app settings screen">
                 <figcaption>
-                    <strong>Hamp Keyboard</strong> is a fork of the FUTO Keyboard (itself a fork of LatinIME, The
-                    Android Open-Source Keyboard), and installable alongside the official FUTO Keyboard
-                    app. What is special with Hamp Keyboard is that it adds features of
-                    Swipe left/right on the spacebar moving the cursor character-by-character and, swipe up/down on the
-                    spacebar moving the cursor line-by-line.
+                    <strong>Hamp Keyboard</strong> is a fork of the FUTO Keyboard (itself a fork of LatinIME, the
+                    Android Open-Source Keyboard), and it installs alongside the official FUTO Keyboard app.
+                    What makes it special is the spacebar gestures it adds &mdash; swipe left/right moves the
+                    cursor character by character, and swipe up/down moves it line by line.
                 </figcaption>
             </figure>
         </section>
 
         <section>
             <h2>Quick Demo showing some screens in Lectures app</h2>
-            <!-- controls is required for playback control and poster shows up before video playback. -->
+            <!-- youtube embed rather than a local <video>. the title attribute matters more
+                 here than usual: an iframe is a black box to a screen reader, so without a real
+                 name it just announces "frame". -->
             <iframe width="300" height="533" src="https://www.youtube.com/embed/O3fT4BBkRUM"
-                title="YouTube Shorts player" frameborder="0" allow="accelerometer; autoplay; clipboard-write"
-                allowfullscreen>
+                title="Short demo video showing screens from the Lectures app" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write" allowfullscreen>
             </iframe>
         </section>
 
 
 
-        <footer>
-            <p>&copy; 2026 MARK PAUL.</p>
-        </footer>
+    </main>
 
-
+    <footer>
+        <p>&copy; 2026 MARK PAUL.</p>
+    </footer>
 
 </body>
 

@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me</title>
 
     <style>
@@ -93,7 +95,7 @@
             <a href="index.html">
                 <p>
                     MARK PAUL
-                    <br><span class="subtitle">Portifolio</span>
+                    <br><span class="subtitle">Portfolio</span>
                 </p>
             </a>
         </div>
@@ -111,6 +113,8 @@
     </header>
 
 
+    <!-- each topic gets its own <section> with its own heading. sections are what build
+         the page outline, so a screen reader can hop heading to heading. -->
     <main>
         <hr>
         <!-- ol because the milestones are chronological and sequence matters. -->
@@ -119,14 +123,16 @@
             <ol>
                 <li>2024 &mdash; Started B.Sc. in Software Engineering at Mbarara University of Science and Technology.
                 </li>
-                <li>2025 &mdash; Started building my personal first Android academic companion app at MUST.</li>
+                <li>2025 &mdash; Started building my first personal Android academic companion app at MUST.</li>
                 <li>2026 &mdash; Made a custom feature of floating keyboard button-toggle in Termux X11 app.</li>
                 <li>2026 &mdash; Shipped Lectures Android v1 with offline cache and queued sync.</li>
-                <li><a class="github" href="https://github.com/mugmarp">More Projects</a></li>
             </ol>
+            <!-- that link is NOT a milestone, so it sits outside the <ol>. leaving it in
+                 would imply it's step six of my timeline. -->
+            <p><a class="github" href="https://github.com/mugmarp">See more of my projects on GitHub</a></p>
         </section>
 
-        <!-- dl is used for term-description pairs, not just a fancy list. Each dt is a term, each dd is its definition. -->
+        <!-- dl is for term + meaning pairs, not just a fancy bullet list. dt is the term, dd is what it means. -->
         <section>
             <h2>Technical Terminology</h2>
             <dl>
@@ -155,8 +161,9 @@
             </dl>
         </section>
 
+        <!-- plain ul here - these are just areas I care about, there's no ranking -->
         <section>
-            <h1>Core Focus Areas</h2>
+            <h2>Core Focus Areas</h2>
                 <ul>
                     <li>Data Structures &amp; Algorithms</li>
                     <li>Object-Oriented Programming (Java, C++)</li>

@@ -87,7 +87,7 @@
             <a href="index.html">
                 <p>
                     MARK PAUL
-                    <br><span class="subtitle">Portifolio</span>
+                    <br><span class="subtitle">Portfolio</span>
                 </p>
             </a>
         </div>
@@ -106,27 +106,32 @@
 
     <main>
         <hr>
+        <!-- aria-labelledby points at the h2 underneath, so the section announces itself
+             as "Send a Message" rather than as an unnamed region. -->
         <section aria-labelledby="contact-heading">
             <h2 id="contact-heading">Send a Message</h2>
-            <br>
-            You can reach me directly at
-            <a href="mailto:markpaulmu@gmail.com">markpaulmu@gmail.com</a>
-            or use the form below.
-            <br><br>
+            <p>
+                You can reach me directly at
+                <a href="mailto:markpaulmu@gmail.com">markpaulmu@gmail.com</a>
+                or use the form below.
+            </p>
 
-            <!-- action="#" is a placeholder. In a real deployment it points at a server endpoint or a service like Formspree. -->
+            <!-- action="#" is just a placeholder, there's no server behind this. in a real
+                 deploy it would point at an endpoint or a form service. -->
             <form action="#" method="post">
 
-                <!-- fieldset groups related controls. legend names the group for screen readers. -->
+                <!-- fieldset groups the related controls, legend gives that group a name that
+                     actually gets read out. -->
                 <fieldset>
                     <legend>Your Details</legend>
-                    <!-- Every input with label must also match the input's id. -->
+                    <!-- for= has to match the input's id, or clicking the label does nothing
+                         and screen readers never link the two together. -->
                     <label for="name">Full Name :</label>
                     <input type="text" id="name" name="name" autocomplete="name" minlength="2" required>
                     <br><br>
 
                     <label for="email">Email Address :</label>
-                    <!-- using type="email" gives native validation -->
+                    <!-- type="email" gets the browser to check the format for free, no javascript -->
                     <input type="email" id="email" name="email" autocomplete="email" required>
                     <br><br>
                     <label for="phone">Phone Number : </label>
@@ -147,7 +152,7 @@
                         <option value="other">Other</option>
                     </select><br><br>
                     <label for="message">Message</label>
-                    <!-- textarea is for the long form text. -->
+                    <!-- textarea, not an input - the message is multi-line -->
                     <textarea id="message" name="message" rows="10" cols="50" required></textarea>
 
                 </fieldset>

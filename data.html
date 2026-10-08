@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data</title>
     <style>
         header {
@@ -68,11 +70,6 @@
             padding: 0 2rem;
         }
 
-        main text-primary {
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 50px;
-        }
-
         table {
             border-collapse: collapse;
             width: 100%;
@@ -116,7 +113,7 @@
             <a href="index.html">
                 <p>
                     MARK PAUL
-                    <br><span class="subtitle">Portifolio</span>
+                    <br><span class="subtitle">Portfolio</span>
                 </p>
             </a>
         </div>
@@ -136,10 +133,17 @@
 
     <main>
         <hr>
+        <!-- heading lives outside the table, the <caption> inside it is the table's own
+             accessible name - screen readers announce it the moment you land on the table. -->
+        <h2>Skills at a Glance</h2>
         <table>
-            <caption>Skill Proficiency Matrix</caption>
+            <caption>Self-assessed proficiency for the languages and tools I work with</caption>
+            <!-- thead / tbody / tfoot split the table into header rows, data rows and a
+                 summary row. assistive tech uses that split to keep the right header
+                 announced while you move through the cells. -->
             <thead>
                 <tr>
+                    <!-- scope="col" says this header labels everything below it in its own column -->
                     <th scope="col">Skill</th>
                     <th scope="col">Category</th>
                     <th scope="col">Proficiency</th>
@@ -147,6 +151,8 @@
                 </tr>
             </thead>
             <tbody>
+                <!-- first cell of every row is a <th> with scope="row" - it's the label for
+                     that row, not data in its own right. -->
                 <tr>
                     <th scope="row">Jetpack Compose M3</th>
                     <td>Mobile UI</td>
@@ -178,6 +184,14 @@
                     <td>hamp-keyboard</td>
                 </tr>
             </tbody>
+            <!-- tfoot holds the closing/summary row. it isn't a data row, so it doesn't go in
+                 tbody. colspan lets the one cell stretch across the columns it describes. -->
+            <tfoot>
+                <tr>
+                    <th scope="row">Summary</th>
+                    <td colspan="3">All five are self-assessed as beginner &mdash; each one is actively being worked on.</td>
+                </tr>
+            </tfoot>
         </table>
     </main>
 
