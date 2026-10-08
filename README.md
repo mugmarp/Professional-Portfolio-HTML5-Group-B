@@ -55,7 +55,7 @@ Mark Paul Mugendawala is the team's lead developer and handles first contact —
 
 ## Version control
 
-Built up in stages, one commit per page or feature. Run `git log --oneline` to see the sequence.
+Built up in stages, one commit per page or feature as told in the assignment. Running `git log --oneline` to see the all commits.
 
 ---
 
