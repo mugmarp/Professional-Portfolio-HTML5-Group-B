@@ -4,17 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery &mdash; Android and Linux Projects | Mark Paul</title>
+    <title>Gallery &mdash; Team Projects | Hamp Developers</title>
 
     <!-- ---- search engine + link preview tags ----
          description is the grey text google shows under the title in results.
          keep it around 150 characters or it gets chopped off mid-sentence. -->
-    <meta name="description" content="Screenshots and demos of my Android and Linux projects: the Lectures timetable app, a Termux X11 floating keyboard feature, and Hamp Keyboard.">
-    <meta name="author" content="Mark Paul Mugendawala">
+    <meta name="description" content="Screenshots and demos of Hamp Developers team projects: the Lectures timetable app, a Termux X11 floating keyboard feature, and Hamp Keyboard.">
+    <meta name="author" content="Hamp Developers">
 
     <!-- google has ignored the keywords tag for years because people abused it.
          it's here so you can see the idea, not because it does anything. -->
-    <meta name="keywords" content="Mark Paul Mugendawala, software engineering, portfolio, Android, Kotlin, MUST, Mbarara">
+    <meta name="keywords" content="Hamp Developers, software engineering, MUST, Mbarara, Android, Kotlin, student team, portfolio">
 
     <!-- index, follow is what search engines do by default anyway. writing it out
          just makes the intention explicit instead of leaving it implied. -->
@@ -27,12 +27,12 @@
     <!-- the og: tags are what facebook, linkedin and whatsapp show when someone
          pastes the link in. with none of these you get a bare grey box. -->
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Mark Paul Mugendawala">
-    <meta property="og:title" content="Gallery — Android and Linux Projects">
-    <meta property="og:description" content="Screenshots and demos of my Android and Linux projects: the Lectures timetable app, a Termux X11 floating keyboard feature, and Hamp Keyboard.">
+    <meta property="og:site_name" content="Hamp Developers">
+    <meta property="og:title" content="Gallery — Team Projects | Hamp Developers">
+    <meta property="og:description" content="Screenshots and demos of Hamp Developers team projects: the Lectures timetable app, a Termux X11 floating keyboard feature, and Hamp Keyboard.">
     <meta property="og:url" content="https://mugmarp.github.io/Professional-Portfolio-HTML5-Group-B/gallery.html">
     <meta property="og:image" content="https://mugmarp.github.io/Professional-Portfolio-HTML5-Group-B/media/images/social-preview.png">
-    <meta property="og:image:alt" content="Mark Paul Mugendawala portfolio card with the site navigation">
+    <meta property="og:image:alt" content="Hamp Developers portfolio card with the site navigation">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:locale" content="en_GB">
@@ -40,10 +40,10 @@
     <!-- twitter has its own set of names for the same thing. summary_large_image
          makes the preview a big picture instead of a tiny square thumbnail. -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Gallery — Android and Linux Projects">
-    <meta name="twitter:description" content="Screenshots and demos of my Android and Linux projects: the Lectures timetable app, a Termux X11 floating keyboard feature, and Hamp Keyboard.">
+    <meta name="twitter:title" content="Gallery — Team Projects | Hamp Developers">
+    <meta name="twitter:description" content="Screenshots and demos of Hamp Developers team projects: the Lectures timetable app, a Termux X11 floating keyboard feature, and Hamp Keyboard.">
     <meta name="twitter:image" content="https://mugmarp.github.io/Professional-Portfolio-HTML5-Group-B/media/images/social-preview.png">
-    <meta name="twitter:image:alt" content="Mark Paul Mugendawala portfolio card with the site navigation">
+    <meta name="twitter:image:alt" content="Hamp Developers portfolio card with the site navigation">
 
     <!-- tints the browser bar on mobile chrome/android to match the header -->
     <meta name="theme-color" content="#f6f8fa">
@@ -110,10 +110,19 @@
             color: inherit;
         }
 
+        /* the content column is now defined on main and footer instead of body.
+           body has to stay full width so the header band can run edge to edge. */
         body {
+            margin: 0;
+        }
+
+        main,
+        footer {
             max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 2rem;
+            padding-right: 2rem;
         }
 
         footer {
@@ -138,6 +147,20 @@
         figcaption {
             flex: 1;
         }
+
+        /* the screenshots are 1080px+ wide and were overflowing the 1200px content
+           column on a wide screen. capping them keeps the whole figure inside the
+           page and lets the caption keep its column. */
+        figure img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* the video is a phone screen recording, so it stays narrow on purpose */
+        .demo iframe {
+            border: 1px solid #d0d7de;
+            border-radius: 6px;
+        }
         /* colour pass: links were falling back to the browser default blue,
            which didn't match anything else on the page. every value here was
            checked for contrast against the background it sits on. */
@@ -160,6 +183,59 @@
             text-decoration: underline;
         }
 
+        /* ---- design pass ---- */
+
+        /* without this, padding adds to width instead of sitting inside it, and
+           the header ends up wider than the rest of the page. */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        /* the html/body background paints the full window; the body rule below
+           is only about the content column. without this the header band stops
+           at the content width and the strip either side looks cut off. */
+        html {
+            background: #ffffff;
+        }
+
+        body {
+            background: #ffffff;
+            line-height: 1.6;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: #1f2328;
+        }
+
+        /* the header spans the full window so the tinted band runs edge to edge,
+           while its contents line up with the 1200px column below it.
+           this uses 100% rather than 100vw on purpose: 100vw counts the scrollbar,
+           so the header would overhang the page by ~15px and cause a sideways
+           scroll. 100% is the real available width, scrollbar already excluded. */
+        header {
+            padding-left: calc(2rem + max(0px, (100% - 1200px) / 2));
+            padding-right: calc(2rem + max(0px, (100% - 1200px) / 2));
+        }
+
+        /* keeps the header contents from stretching to the window edges on a
+           very wide monitor */
+        #main_nav ul {
+            justify-content: flex-end;
+        }
+
+        /* a visible, consistent gap between the stacked content blocks */
+        main>section,
+        main>article,
+        main>aside {
+            margin-bottom: 2.5rem;
+        }
+
+        /* the <hr> straight after <main> was doing nothing useful now that the
+           header has its own border. */
+        main>hr {
+            display: none;
+        }
+
         /* keyboard users need to see where they are. the browser's default
            outline disappears against the tinted header. */
         :focus-visible {
@@ -176,8 +252,8 @@
 
             <a href="index.html">
                 <p>
-                    MARK PAUL
-                    <br><span class="subtitle">Portfolio</span>
+                    HAMP
+                    <br><span class="subtitle">Developers</span>
                 </p>
             </a>
         </div>
@@ -196,10 +272,12 @@
 
     <main>
         <hr>
+        <h1>Gallery</h1>
+
         <!-- aria-labelledby points at the h2 below so this section gets announced by name
              instead of just "region". -->
         <section aria-labelledby="gallery-heading">
-            <h2 id="gallery-heading">Selected Work</h2>
+            <h2 id="gallery-heading">Our Work</h2>
 
             <!-- figure instead of a bare <img>, because the caption belongs to the image and
                  should travel with it. the alt text says what's actually in the shot - if it just
@@ -209,9 +287,9 @@
                 <img src="media/images/xfce4_Debian_proot.png" width="800"
                     alt="Screenshot of Termux X11 running Debian Linux with the XFCE4 desktop environment as a GUI on Android, with the floating green keyboard button-toggle visible on the right hand side of the screen.">
                 <figcaption>
-                    <strong>Termux X11 Floating Keyboard Button</strong> &mdash; an extra feature
-                    for adding an on-demand soft keyboard by just tapping Termux X11 app on Android.
-                    Built with C, Android NDK, X11, and Termux.
+                    <strong>Termux X11 Floating Keyboard Button</strong> &mdash; a feature we added that
+                    surfaces an on-demand soft keyboard by just tapping the floating button in the
+                    Termux X11 app on Android. Built with C, Android NDK, X11, and Termux.
                 </figcaption>
             </figure>
 
@@ -219,37 +297,39 @@
                 <img width="300" src="media/images/Timetable_screen.png"
                     alt="Screenshot of the Lectures Android app showing a seven-day timetable with lecture blocks and a vacant room finder panel.">
                 <figcaption>
-                    <strong>Lectures App</strong> : Android timetable app with a
-                    write-through offline cache, find free room and queued sync. Currently shipping as a native Android
-                    academic companion for a MUST student (it started out as a personal app),
-                    built with Kotlin and Jetpack Compose M3.
+                    <strong>Lectures App</strong> &mdash; our Android timetable app with a write-through
+                    offline cache, a free-room finder and queued sync. Currently shipping as a native
+                    Android academic companion for MUST students, built with Kotlin and Jetpack
+                    Compose M3.
                 </figcaption>
             </figure>
             <figure>
                 <img width="300" src="media/images/faculty_picker_lectures_app.png"
                     alt="Screenshot of the Lectures Android app showing the Faculty picker.">
                 <figcaption>
-                    <strong>In the Lectures App</strong>, one will first choose their Faculty using the Faculty picker.
+                    <strong>Faculty picker</strong> in the Lectures app &mdash; you pick your faculty first and
+                    the timetable narrows down from there.
                 </figcaption>
             </figure>
             <figure>
                 <img src="media/images/HampKeyboardSettings.png" width="300"
                     alt="Screenshot of the Hamp Keyboard app settings screen">
                 <figcaption>
-                    <strong>Hamp Keyboard</strong> is a fork of the FUTO Keyboard (itself a fork of LatinIME, the
-                    Android Open-Source Keyboard), and it installs alongside the official FUTO Keyboard app.
-                    What makes it special is the spacebar gestures it adds &mdash; swipe left/right moves the
-                    cursor character by character, and swipe up/down moves it line by line.
+                    <strong>Hamp Keyboard</strong> is our fork of the FUTO Keyboard (itself a fork of LatinIME,
+                    the Android Open-Source Keyboard), and it installs alongside the official FUTO
+                    Keyboard app. What makes it special is the spacebar gestures it adds &mdash; swipe
+                    left/right moves the cursor character by character, and swipe up/down moves it
+                    line by line.
                 </figcaption>
             </figure>
         </section>
 
         <section>
-            <h2>Quick Demo showing some screens in Lectures app</h2>
+            <h2>A quick demo of the Lectures app</h2>
             <!-- youtube embed rather than a local <video>. the title attribute matters more
                  here than usual: an iframe is a black box to a screen reader, so without a real
                  name it just announces "frame". -->
-            <iframe width="300" height="533" src="https://www.youtube.com/embed/O3fT4BBkRUM"
+            <iframe class="demo" width="300" height="533" src="https://www.youtube.com/embed/O3fT4BBkRUM"
                 title="Short demo video showing screens from the Lectures app" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write" allowfullscreen>
             </iframe>
@@ -260,7 +340,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 MARK PAUL.</p>
+        <p>&copy; 2026 Hamp Developers.</p>
     </footer>
 
 </body>

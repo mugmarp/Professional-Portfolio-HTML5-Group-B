@@ -1,17 +1,38 @@
-# Professional-Portfolio-HTML5-Group-B
+# Hamp Developers
 
-A 5-page personal portfolio site built for **SWE2106 Internet Technologies and Web Design**,
+A 5-page team portfolio site built for **SWE2106 Internet Technologies and Web Design**,
 Etivity 3. Hand-written HTML5, no frameworks, no external stylesheet.
+
+Hamp Developers is a team of eleven Software Engineering students at Mbarara University of
+Science and Technology (MUST).
 
 ## Pages
 
 | Page | What's on it |
 | --- | --- |
 | `index.html` | Home. Semantic hub with `<header>`, `<nav>`, `<main>`, `<article>`, `<aside>`, `<footer>` |
-| `about.html` | Bio. An ordered list of career milestones and a description list of technical terms |
+| `about.html` | The team roster, an ordered list of team milestones, and a description list of technical terms |
 | `gallery.html` | Media. Four `<figure>`/`<figcaption>` pairs plus an embedded demo video |
 | `data.html` | Results. A skill proficiency table using `<thead>`, `<tbody>`, `<tfoot>` and `scope` |
 | `contact.html` | Input. A contact form with native HTML5 validation |
+
+## The team
+
+| Name | Registration number |
+| --- | --- |
+| Wokwaba Charles | 2025/BSE/187/PS |
+| Kanyesigye Brian | 2025/BSE/080/PS |
+| Kwesiga Lewis | 2025/BSE/097/PS |
+| Akatuwijuka Annibow | 2025/BSE/030/PS |
+| Natweta Cyril | 2025/BSE/132/PS |
+| Wawangula Generous | 2025/BSE/184/PS |
+| Mugendawala Mark Paul | 2025/BSE/108/PS |
+| Katto Andrew | 2025/BSE/085/PS |
+| Nabaweesi Patricia Mirembe | — |
+| Matovu Edwine Levi | — |
+| Osuta Amen Joe | — |
+
+Mark Paul Mugendawala is the team's lead developer and handles first contact — see `contact.html`.
 
 ## Folders
 
@@ -46,4 +67,4 @@ Built up in stages, one commit per page or feature. Run `git log --oneline` to s
 
 ---
 
-© 2026 Mark Paul Mugendawala
+&copy; 2026 Hamp Developers

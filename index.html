@@ -4,17 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mark Paul Mugendawala &mdash; Software Engineering Portfolio</title>
+    <title>Hamp Developers &mdash; Software Engineering Team at MUST</title>
 
     <!-- ---- search engine + link preview tags ----
          description is the grey text google shows under the title in results.
          keep it around 150 characters or it gets chopped off mid-sentence. -->
-    <meta name="description" content="Portfolio of Mark Paul Mugendawala, a Software Engineering student at Mbarara University of Science and Technology building offline-first Android apps.">
-    <meta name="author" content="Mark Paul Mugendawala">
+    <meta name="description" content="Hamp Developers is a student software engineering team at Mbarara University of Science and Technology building Android and Linux tools.">
+    <meta name="author" content="Hamp Developers">
 
     <!-- google has ignored the keywords tag for years because people abused it.
          it's here so you can see the idea, not because it does anything. -->
-    <meta name="keywords" content="Mark Paul Mugendawala, software engineering, portfolio, Android, Kotlin, MUST, Mbarara">
+    <meta name="keywords" content="Hamp Developers, software engineering, MUST, Mbarara, Android, Kotlin, student team, portfolio">
 
     <!-- index, follow is what search engines do by default anyway. writing it out
          just makes the intention explicit instead of leaving it implied. -->
@@ -27,12 +27,12 @@
     <!-- the og: tags are what facebook, linkedin and whatsapp show when someone
          pastes the link in. with none of these you get a bare grey box. -->
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Mark Paul Mugendawala">
-    <meta property="og:title" content="Mark Paul Mugendawala — Software Engineering Portfolio">
-    <meta property="og:description" content="Portfolio of Mark Paul Mugendawala, a Software Engineering student at Mbarara University of Science and Technology building offline-first Android apps.">
+    <meta property="og:site_name" content="Hamp Developers">
+    <meta property="og:title" content="Hamp Developers — Software Engineering Team at MUST">
+    <meta property="og:description" content="Hamp Developers is a student software engineering team at Mbarara University of Science and Technology building Android and Linux tools.">
     <meta property="og:url" content="https://mugmarp.github.io/Professional-Portfolio-HTML5-Group-B/">
     <meta property="og:image" content="https://mugmarp.github.io/Professional-Portfolio-HTML5-Group-B/media/images/social-preview.png">
-    <meta property="og:image:alt" content="Mark Paul Mugendawala portfolio card with the site navigation">
+    <meta property="og:image:alt" content="Hamp Developers portfolio card with the site navigation">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:locale" content="en_GB">
@@ -40,10 +40,10 @@
     <!-- twitter has its own set of names for the same thing. summary_large_image
          makes the preview a big picture instead of a tiny square thumbnail. -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Mark Paul Mugendawala — Software Engineering Portfolio">
-    <meta name="twitter:description" content="Portfolio of Mark Paul Mugendawala, a Software Engineering student at Mbarara University of Science and Technology building offline-first Android apps.">
+    <meta name="twitter:title" content="Hamp Developers — Software Engineering Team at MUST">
+    <meta name="twitter:description" content="Hamp Developers is a student software engineering team at Mbarara University of Science and Technology building Android and Linux tools.">
     <meta name="twitter:image" content="https://mugmarp.github.io/Professional-Portfolio-HTML5-Group-B/media/images/social-preview.png">
-    <meta name="twitter:image:alt" content="Mark Paul Mugendawala portfolio card with the site navigation">
+    <meta name="twitter:image:alt" content="Hamp Developers portfolio card with the site navigation">
 
     <!-- tints the browser bar on mobile chrome/android to match the header -->
     <meta name="theme-color" content="#f6f8fa">
@@ -111,10 +111,19 @@
             color: inherit;
         }
 
+        /* the content column is now defined on main and footer instead of body.
+           body has to stay full width so the header band can run edge to edge. */
         body {
+            margin: 0;
+        }
+
+        main,
+        footer {
             max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 2rem;
+            padding-right: 2rem;
         }
 
         .text-primary {
@@ -152,6 +161,59 @@
             text-decoration: underline;
         }
 
+        /* ---- design pass ---- */
+
+        /* without this, padding adds to width instead of sitting inside it, and
+           the header ends up wider than the rest of the page. */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        /* the html/body background paints the full window; the body rule below
+           is only about the content column. without this the header band stops
+           at the content width and the strip either side looks cut off. */
+        html {
+            background: #ffffff;
+        }
+
+        body {
+            background: #ffffff;
+            line-height: 1.6;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: #1f2328;
+        }
+
+        /* the header spans the full window so the tinted band runs edge to edge,
+           while its contents line up with the 1200px column below it.
+           this uses 100% rather than 100vw on purpose: 100vw counts the scrollbar,
+           so the header would overhang the page by ~15px and cause a sideways
+           scroll. 100% is the real available width, scrollbar already excluded. */
+        header {
+            padding-left: calc(2rem + max(0px, (100% - 1200px) / 2));
+            padding-right: calc(2rem + max(0px, (100% - 1200px) / 2));
+        }
+
+        /* keeps the header contents from stretching to the window edges on a
+           very wide monitor */
+        #main_nav ul {
+            justify-content: flex-end;
+        }
+
+        /* a visible, consistent gap between the stacked content blocks */
+        main>section,
+        main>article,
+        main>aside {
+            margin-bottom: 2.5rem;
+        }
+
+        /* the <hr> straight after <main> was doing nothing useful now that the
+           header has its own border. */
+        main>hr {
+            display: none;
+        }
+
         /* keyboard users need to see where they are. the browser's default
            outline disappears against the tinted header. */
         :focus-visible {
@@ -170,8 +232,8 @@
 
             <a href="index.html">
                 <p>
-                    MARK PAUL
-                    <br><span class="subtitle">Portfolio</span>
+                    HAMP
+                    <br><span class="subtitle">Developers</span>
                 </p>
             </a>
         </div>
@@ -192,33 +254,34 @@
 
     <main>
         <hr>
-        <h1>Welcome to my page</h1>
+        <h1>Hamp Developers</h1>
 
         <!-- article, because this intro is the actual story of the page. it still makes
              sense on its own if you lift it out and drop it somewhere else. -->
         <article>
 
-            <h2>Identity</h2>
-            <span class="text-primary">MARK PAUL MUGENDAWALA</span>
+            <h2>Who We Are</h2>
+            <span class="text-primary">HAMP DEVELOPERS</span>
             <p>
-                I am an undergraduate Software Engineering student at Mbarara University of
-                Science and Technology (MUST), exploring mobile app architecture,
-                offline-first systems, and Linux/Android internals. I am passionate about
-                building modular applications and exploring AI-assisted developer tools.
+                Hamp Developers is a team of Software Engineering students at Mbarara University
+                of Science and Technology (MUST). We build things for Android and for Linux on
+                Android, mostly out of our own frustration with how awkward those two worlds are
+                to combine.
             </p>
             <p>
-                I am currently shipping my custom Timetable Android app, <strong><a
-                        href="https://github.com/mugmarp/mylectures/tree/test">Lectures</a></strong>, a
-                native Android app with a write-through offline cache and queued sync. I am
-                also exploring customizing or adding features to FOSS apps, like adding a floating keyboard toggle
-                button feature to
-                <a href="https://github.com/mugmarp/termux-x11-floating">Termux X11</a> which surfaces the soft keyboard
-                on demand by just tapping the floating button when
-                running Linux GUI apps on Android.
+                Our current focus is the <strong><a
+                        href="https://github.com/mugmarp/mylectures/tree/test">Lectures</a></strong>
+                Android app, a timetable companion with a write-through offline cache and queued
+                sync so it stays useful with no signal. On the side we work on
+                <a href="https://github.com/mugmarp/termux-x11-floating">Termux X11</a>, where we
+                added a floating button that surfaces the soft keyboard on demand while running
+                Linux GUI apps on Android, and on Hamp Keyboard, our fork of the FUTO keyboard
+                with extra spacebar gestures.
             </p>
             <p>
-                I am active in the Mbarara developer community through GDG Mbarara, MUCOSA, AWS Mbarara, BWAT
-                workshops, and Canva meetups.
+                Most of us are active in the Mbarara developer community through GDG Mbarara,
+                MUCOSA, AWS Mbarara, BWAT workshops, and Canva meetups. The full roster is on the
+                <a href="about.html">About page</a>.
             </p>
         </article>
 
@@ -226,17 +289,19 @@
              to get the point of the page. -->
         <aside>
             <h2>Quick Facts</h2>
-            <p>Live in Kampala. Interested in getting into deep back-end development.</p>
+            <ul>
+                <li>Eleven members, all Software Engineering students at MUST</li>
+                <li>Based in Mbarara and Kampala, Uganda</li>
+                <li>Interests: mobile architecture, offline-first systems, Linux/Android internals</li>
+                <li>We work in the open on <a href="https://github.com/mugmarp">GitHub</a></li>
+            </ul>
         </aside>
-
-
-
 
     </main>
 
     <!-- one footer for the whole page, not one per section -->
     <footer>
-        <p>&copy; 2026 MARK PAUL.</p>
+        <p>&copy; 2026 Hamp Developers.</p>
     </footer>
 
 </body>
