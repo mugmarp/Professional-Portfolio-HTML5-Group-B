@@ -12,6 +12,10 @@
             justify-content: space-between;
             align-items: center;
             padding: 1rem 2rem;
+            /* tint the top bar so it reads as its own band instead of
+               floating on the same white as everything else */
+            background: #f6f8fa;
+            border-bottom: 1px solid #d0d7de;
         }
 
         .logo {
@@ -76,12 +80,41 @@
         }
 
         footer {
-            border-top: 1px solid #ddd;
+            border-top: 1px solid #d0d7de;
             margin-top: 2rem;
             padding-top: 1rem;
             font-size: 0.9rem;
             color: #555;
         }
+        /* colour pass: links were falling back to the browser default blue,
+           which didn't match anything else on the page. every value here was
+           checked for contrast against the background it sits on. */
+        /* scoped to main on purpose - the logo link and the nav links each set
+           their own colour at higher specificity, so a bare "a" rule would just
+           get overridden by them and quietly do nothing. */
+        main a {
+            color: #0969da;
+        }
+
+        main a:hover {
+            color: #0550ae;
+            text-decoration: underline;
+        }
+
+        /* the nav links inherit their colour from an id-specificity rule, so the
+           hover above never reaches them and the menu would give no feedback. */
+        #main_nav a:hover {
+            color: #0969da;
+            text-decoration: underline;
+        }
+
+        /* keyboard users need to see where they are. the browser's default
+           outline disappears against the tinted header. */
+        :focus-visible {
+            outline: 3px solid #0969da;
+            outline-offset: 2px;
+        }
+
     </style>
 </head>
 
