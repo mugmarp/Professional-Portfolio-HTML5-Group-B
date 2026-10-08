@@ -29,7 +29,7 @@ Science and Technology (MUST).
 | Mugendawala Mark Paul | 2025/BSE/108/PS |
 | Katto Andrew | 2025/BSE/085/PS |
 | Nabaweesi Patricia Mirembe | — |
-| Matovu Edwine Levi | — |
+| Matovu Edwine Levi | 2025/BSE/105/PS |
 | Osuta Amen Joe | — |
 
 Mark Paul Mugendawala is the team's lead developer and handles first contact — see `contact.html`.
