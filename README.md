@@ -39,14 +39,6 @@ Mark Paul Mugendawala is the team's lead developer and handles first contact —
 - `media/images/` — screenshots used on the gallery page, plus the social preview card
 - `Design Documentation/` — sitemap and wireframes (Home and Gallery)
 
-## Running it
-
-No build step. Open `index.html` in a browser, or serve the folder:
-
-```
-python3 -m http.server 8000
-```
-
 ## Accessibility notes
 
 - Every page has a unique `<title>` and a `<meta name="description">`
