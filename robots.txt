@@ -1,8 +1,0 @@
-# robots.txt - the first thing a crawler asks for when it hits a site.
-# this one just says "go ahead, and here is the list of pages".
-
-User-agent: *
-Allow: /
-
-# points crawlers at the sitemap so they don't have to guess the page list.
-Sitemap: https://mugmarp.github.io/Professional-Portfolio-HTML5-Group-B/sitemap.xml
