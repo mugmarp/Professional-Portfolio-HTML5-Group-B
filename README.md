@@ -39,7 +39,6 @@ python3 -m http.server 8000
 - Per-page `<meta name="description">`, all under 160 characters
 - Open Graph and Twitter card tags so pasted links render a preview card
 - `sitemap.xml` and `robots.txt` at the repo root
-- Schema.org `Person` structured data on the home page
 
 ## Version control
 
