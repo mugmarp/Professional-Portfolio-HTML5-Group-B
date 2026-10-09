@@ -32,7 +32,7 @@ Science and Technology (MUST).
 | Matovu Edwine Levi | 2025/BSE/105/PS |
 | Osuta Amen Joe | — |
 
-Mark Paul Mugendawala is the team's lead developer and handles first contact — see `contact.html`.
+Wokwaba Charles is the team's lead developer and handles first contact — see `contact.html`.
 
 ## Folders
 
