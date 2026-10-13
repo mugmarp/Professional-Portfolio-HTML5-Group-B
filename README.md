@@ -28,9 +28,9 @@ Science and Technology (MUST).
 | Wawangula Generous | 2025/BSE/184/PS |
 | Mugendawala Mark Paul | 2025/BSE/108/PS |
 | Katto Andrew | 2025/BSE/085/PS |
-| Nabaweesi Patricia Mirembe | — |
+| Nabaweesi Patricia Mirembe | 2025/BSE/120/PS |
 | Matovu Edwine Levi | 2025/BSE/105/PS |
-| Osuta Amen Joe | — |
+| Osuta Amen Joel | 2025/BSE/152/PS |
 
 Wokwaba Charles is the team's lead developer and handles first contact — see `contact.html`.
 
